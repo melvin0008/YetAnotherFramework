@@ -2,7 +2,7 @@
 
 // framework/front.php
  
-require_once __DIR__.'/autoload.php';
+require_once __DIR__.'/../bootstrap/autoload.php';
  
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,14 +11,16 @@ $request = Request::createFromGlobals();
 $response = new Response();
  
 $map = array(
-    '/hello' => __DIR__.'/hello.php',
-    '/bye'   => __DIR__.'/bye.php',
+    '/hello' => 'hello',
+    '/bye'   => 'bye',
 );
+
  
 $path = $request->getPathInfo();
 if (isset($map[$path])) {
 	ob_start();
-    include $map[$path];
+	extract($request->query->all(), EXTR_SKIP);
+    include sprintf(__DIR__.'/../app/%s.php', $map[$path]);
     $response->setContent(ob_get_clean());
 } else {
     $response->setStatusCode(404);
