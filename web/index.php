@@ -43,10 +43,10 @@ catch(Routing\Exception\ResourceNotFoundException $e)
     $response->setStatusCode(404);
     $response->setContent('Not Found');
 }
-// catch(Exception $e)
-// {
-//     $response->setStatusCode(500);
-//     $response->setContent('An exception occurred');
-// }
+catch(Exception $e)
+{
+    $response->setStatusCode(500);
+    $response->setContent('An exception occurred');
+}
  
 $response->send();
