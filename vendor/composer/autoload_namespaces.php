@@ -12,4 +12,6 @@ return array(
     'Symfony\\Component\\EventDispatcher' => array($vendorDir . '/symfony/event-dispatcher'),
     'Symfony\\Component\\ClassLoader' => array($vendorDir . '/symfony/class-loader'),
     'SessionHandlerInterface' => array($vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs'),
+    'Hyypia' => array($baseDir . '/app'),
+    'Calendar' => array($baseDir . '/app'),
 );

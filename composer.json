@@ -7,6 +7,6 @@
 
 	},
 	"autoload": {
-        "psr-0": { "Hyypia": "app/" , "Calender":"app/"}
+        "psr-0": { "Hyypia": "app/" , "Calendar":"app/"}
     }
 }
